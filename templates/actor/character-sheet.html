@@ -1,0 +1,237 @@
+<form class="frontierscum" autocomplete="off">
+  <div class="scumsheet">
+    <div class="scumsheet-header">
+      <div class="fs-logo">FRONTIER SCUM</div>
+      <div class="wanted">SE BUSCA</div>
+      <div class="dead-or-alive">
+        {{#each wantedOptions as |option|}}
+          <label class="check-container" title="{{../tooltips.wantedState}}">
+            <input type="radio" name="system.wanted" value="{{option.key}}" {{#ifEq ../system.wanted option.key}}checked{{/ifEq}} />
+            <span class="checkmark"></span>
+            <span>{{option.label}}</span>
+          </label>
+        {{/each}}
+      </div>
+    </div>
+
+    <div class="scumsheet-body">
+      <div class="name-block">
+        <div class="fields">
+          <div class="field-row">
+            <label title="{{tooltips.name}}">NOMBRE</label>
+            <input type="text" name="name" value="{{actor.name}}" placeholder="Kid Pomade" spellcheck="false" title="{{tooltips.name}}"/>
+          </div>
+          <div class="field-row">
+            <label title="{{tooltips.background}}">PINTA</label>
+            <input type="text" name="system.background" value="{{system.background}}" placeholder="Errante" spellcheck="false" title="{{tooltips.background}}"/>
+          </div>
+          <div class="field-row">
+            <label title="{{tooltips.wantedCrime}}">BUSCADO POR</label>
+            <input type="text" name="system.wantedCrime" value="{{system.wantedCrime}}" placeholder="Fraude reiterado" spellcheck="false" title="{{tooltips.wantedCrime}}"/>
+          </div>
+        </div>
+        <div class="reward">
+          <label title="{{tooltips.reward}}">RECOMPENSA</label>
+          <div class="reward-row">
+            <div class="input-wrapper">
+              <input type="number" name="system.reward" value="{{system.reward}}" min="0" title="{{tooltips.reward}}"/>
+            </div>
+            <span class="big-s"><label>$</label></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="abilities-block">
+        <div class="ability-col">
+          {{#each abilityEntries as |ability|}}
+            <div class="ability">
+              <div class="top-label name">
+                <span class="rollable ability-name" data-ability="{{ability.key}}" title="{{ability.tooltip}}">{{ability.label}}</span>
+              </div>
+              <div class="value">
+                <input type="number" name="system.abilities.{{ability.key}}" value="{{ability.value}}" placeholder="0" title="{{ability.tooltip}}"/>
+              </div>
+            </div>
+          {{/each}}
+        </div>
+
+        <div class="portrait-col">
+          <img src="{{actor.img}}" title="{{actor.name}}" data-edit="img"/>
+        </div>
+
+        <div class="condition-col">
+          <div class="top-label conditions-and-notes">CONDICIONES Y NOTAS</div>
+
+          <div class="condition-row miserable">
+            <div class="checkbox">
+              <label class="check-container" title="{{tooltips.miserable}}">
+                <input type="checkbox" name="system.miserable" {{#if system.miserable}}checked{{/if}} />
+                <span class="checkmark"></span>
+              </label>
+            </div>
+            <div class="non-checkbox">
+              <span title="{{tooltips.miserable}}">Miserable</span>
+              (
+              <select name="system.misery" title="{{tooltips.misery}}">
+                {{#each miseryOptions as |entry|}}
+                  <option value="{{entry.key}}" {{#ifEq ../system.misery entry.key}}selected{{/ifEq}}>{{entry.label}}</option>
+                {{/each}}
+              </select>
+              ).
+              <span title="{{tooltips.miserable}}">No recuperas HP al descansar.</span>
+            </div>
+          </div>
+
+          <div class="condition-row drunk">
+            <div class="checkbox">
+              <label class="check-container" title="{{tooltips.drunk}}">
+                <input type="checkbox" name="system.drunk" {{#if system.drunk}}checked{{/if}} />
+                <span class="checkmark"></span>
+              </label>
+            </div>
+            <div class="non-checkbox">
+              <span title="{{tooltips.drunk}}">Borracho</span>.
+              <span title="{{tooltips.drunk}}">Intercambia tus</span>
+              <input type="text" name="system.drunkAbility1" value="{{system.drunkAbility1}}" placeholder="Aplomo" spellcheck="false" title="{{tooltips.drunkAbility1}}"/>
+              <span>y</span>
+              <input type="text" name="system.drunkAbility2" value="{{system.drunkAbility2}}" placeholder="Suerte" spellcheck="false" title="{{tooltips.drunkAbility2}}"/>
+              <span title="{{tooltips.drunk}}">hasta que se te pase.</span>
+            </div>
+          </div>
+
+          <div class="condition-row condition-items" data-slot-group="condition" title="{{tooltips.activeConditions}}">
+            <div class="condition-stack">
+              <div class="condition-stack-label">ESTADOS ACTIVOS</div>
+              {{#each conditionEntries as |slot|}}
+                <div class="condition-slot-row">
+                  <input type="text" name="system.{{slot.key}}" value="{{slot.value}}" placeholder="Arrastra una condición aquí" spellcheck="false" title="{{slot.tooltip}}"/>
+                  {{#if slot.canOpen}}<button type="button" class="slot-open slot-icon" data-item-id="{{slot.itemId}}" title="{{../tooltips.openItem}}&#10;{{slot.tooltip}}"><i class="fas fa-info-circle"></i></button>{{/if}}
+                  {{#if slot.canDelete}}<button type="button" class="slot-delete slot-icon" data-slot-key="{{slot.key}}" data-item-id="{{slot.itemId}}" title="Quitar condición&#10;{{slot.tooltip}}"><i class="fas fa-trash-alt"></i></button>{{/if}}
+                </div>
+              {{/each}}
+            </div>
+          </div>
+
+          <div class="condition-row notes">
+            <textarea name="system.condition1" placeholder="Notas, maldiciones, veneno, mugre..." spellcheck="false" title="{{tooltips.condition1}}">{{system.condition1}}</textarea>
+          </div>
+          <div class="condition-row notes">
+            <textarea name="system.condition2" placeholder="Más notas del polvo del camino" spellcheck="false" title="{{tooltips.condition2}}">{{system.condition2}}</textarea>
+          </div>
+        </div>
+      </div>
+
+      <div class="hp-block">
+        <div class="stat-block hp">
+          <div class="name"><span title="{{tooltips.hp}}">HP</span></div>
+          <div class="value">
+            <input type="number" name="system.hp.value" value="{{system.hp.value}}" placeholder="0" title="{{tooltips.hp}}"/>
+          </div>
+        </div>
+        <div class="stat-block max-hp">
+          <div class="name"><span title="{{tooltips.maxHp}}">MAX</span></div>
+          <div class="value">
+            <input type="number" name="system.hp.max" value="{{system.hp.max}}" placeholder="0" title="{{tooltips.maxHp}}"/>
+          </div>
+        </div>
+        <div class="stat-block aces">
+          <div class="name"><span title="{{tooltips.aces}}">ASES</span></div>
+          <div class="value">
+            <input type="number" name="system.aces" value="{{system.aces}}" placeholder="0" title="{{tooltips.aces}}"/>
+          </div>
+        </div>
+        <div class="stat-block silver">
+          <div class="name"><span title="{{tooltips.silver}}">PLATA</span></div>
+          <div class="value">
+            <input type="number" name="system.silver" value="{{system.silver}}" placeholder="0" title="{{tooltips.silver}}"/>
+          </div>
+        </div>
+      </div>
+
+      <div class="action-strip">
+        <button type="button" class="fs-action fs-rest-brawl" title="{{tooltips.restBrawl}}">DESCANSO TRAS UNA REFRIEGA</button>
+        <button type="button" class="fs-action fs-rest-full" title="{{tooltips.restFull}}">DESCANSO COMPLETO</button>
+        <button type="button" class="fs-action fs-drop-check" title="{{tooltips.dropCheck}}">CHEQUEO DE CAÍDA</button>
+        <button type="button" class="fs-action fs-death-check" title="{{tooltips.deathCheck}}">CHEQUEO DE MUERTE</button>
+        <button type="button" class="fs-action fs-recover-ammo" title="{{tooltips.recoverAmmo}}">RECUPERAR MUNICIÓN</button>
+      </div>
+
+      <div class="equipment-block">
+        <div class="eq-col-1">
+          <div class="eq-section on-your-head" data-slot-group="head" title="{{tooltips.head}}">
+            <div class="top-label"><span>EN LA CABEZA</span></div>
+            <div class="eq-row">
+              <input type="text" name="system.{{headEntry.key}}" value="{{headEntry.value}}" spellcheck="false" title="{{headEntry.tooltip}}"/>
+              {{#if headEntry.resourceLabel}}<span class="slot-count" title="{{headEntry.resourceTooltip}}">{{headEntry.resourceLabel}}</span>{{/if}}
+              {{#if headEntry.canUse}}<button type="button" class="slot-use slot-icon" data-item-id="{{headEntry.itemId}}" title="{{tooltips.rollItem}}&#10;{{headEntry.tooltip}}"><i class="fas fa-dice-d20"></i></button>{{/if}}
+              {{#if headEntry.canSacrificeHat}}<button type="button" class="slot-sacrifice slot-icon" data-item-id="{{headEntry.itemId}}" title="{{tooltips.consumeHat}}&#10;{{headEntry.tooltip}}"><i class="fas fa-times"></i></button>{{/if}}
+              {{#if headEntry.canOpen}}<button type="button" class="slot-open slot-icon" data-item-id="{{headEntry.itemId}}" title="{{tooltips.openItem}}&#10;{{headEntry.tooltip}}"><i class="fas fa-info-circle"></i></button>{{/if}}
+              {{#if headEntry.canDelete}}<button type="button" class="slot-delete slot-icon" data-slot-key="{{headEntry.key}}" data-item-id="{{headEntry.itemId}}" title="Quitar de la ficha&#10;{{headEntry.tooltip}}"><i class="fas fa-trash-alt"></i></button>{{/if}}
+            </div>
+          </div>
+          <div class="eq-section skills" title="{{tooltips.skills}}">
+            <div class="skills-label"><span>HABILIDADES</span></div>
+            <datalist id="fs-skill-suggestions">
+              {{#each skillSuggestions as |skill|}}
+                <option value="{{skill}}"></option>
+              {{/each}}
+            </datalist>
+            {{#each skillEntries as |skill|}}
+              <div class="eq-row">
+                <input type="text" name="system.{{skill.key}}" value="{{skill.value}}" placeholder="Habilidad útil" spellcheck="false" list="fs-skill-suggestions" title="{{../tooltips.skills}}"/>
+                {{#if skill.value}}<button type="button" class="skill-use slot-icon" data-skill="{{skill.value}}" title="{{../tooltips.skillUse}}"><i class="fas fa-dice-d20"></i></button>{{/if}}
+              </div>
+            {{/each}}
+          </div>
+        </div>
+
+        <div class="eq-col-2">
+          <div class="eq-section on-your-belt" data-slot-group="belt" title="{{tooltips.belt}}">
+            <div class="top-label"><span>AL CINTO</span></div>
+            {{#each beltEntries as |slot|}}
+              <div class="eq-row">
+                <input type="text" name="system.{{slot.key}}" value="{{slot.value}}" spellcheck="false" title="{{slot.tooltip}}"/>
+                {{#if slot.resourceLabel}}<span class="slot-count" title="{{slot.resourceTooltip}}">{{slot.resourceLabel}}</span>{{/if}}
+                {{#if slot.canUse}}<button type="button" class="slot-use slot-icon" data-item-id="{{slot.itemId}}" title="{{../tooltips.rollItem}}&#10;{{slot.tooltip}}"><i class="fas fa-dice-d20"></i></button>{{/if}}
+                {{#if slot.canOpen}}<button type="button" class="slot-open slot-icon" data-item-id="{{slot.itemId}}" title="{{../tooltips.openItem}}&#10;{{slot.tooltip}}"><i class="fas fa-info-circle"></i></button>{{/if}}
+                {{#if slot.canDelete}}<button type="button" class="slot-delete slot-icon" data-slot-key="{{slot.key}}" data-item-id="{{slot.itemId}}" title="Quitar de la ficha&#10;{{slot.tooltip}}"><i class="fas fa-trash-alt"></i></button>{{/if}}
+              </div>
+            {{/each}}
+          </div>
+          <div class="eq-section on-your-back" data-slot-group="back" title="{{tooltips.back}}">
+            <div class="top-label"><span>A LA ESPALDA</span></div>
+            {{#each backEntries as |slot|}}
+              <div class="eq-row">
+                <input type="text" name="system.{{slot.key}}" value="{{slot.value}}" spellcheck="false" title="{{slot.tooltip}}"/>
+                {{#if slot.resourceLabel}}<span class="slot-count" title="{{slot.resourceTooltip}}">{{slot.resourceLabel}}</span>{{/if}}
+                {{#if slot.canUse}}<button type="button" class="slot-use slot-icon" data-item-id="{{slot.itemId}}" title="{{../tooltips.rollItem}}&#10;{{slot.tooltip}}"><i class="fas fa-dice-d20"></i></button>{{/if}}
+                {{#if slot.canOpen}}<button type="button" class="slot-open slot-icon" data-item-id="{{slot.itemId}}" title="{{../tooltips.openItem}}&#10;{{slot.tooltip}}"><i class="fas fa-info-circle"></i></button>{{/if}}
+                {{#if slot.canDelete}}<button type="button" class="slot-delete slot-icon" data-slot-key="{{slot.key}}" data-item-id="{{slot.itemId}}" title="Quitar de la ficha&#10;{{slot.tooltip}}"><i class="fas fa-trash-alt"></i></button>{{/if}}
+              </div>
+            {{/each}}
+          </div>
+        </div>
+
+        <div class="eq-col-3">
+          <div class="eq-section in-your-pockets" data-slot-group="pocket" title="{{tooltips.pocket}}">
+            <div class="top-label"><span>EN LOS BOLSILLOS</span></div>
+            {{#each pocketEntries as |slot|}}
+              <div class="eq-row">
+                <input type="text" name="system.{{slot.key}}" value="{{slot.value}}" spellcheck="false" title="{{slot.tooltip}}"/>
+                {{#if slot.resourceLabel}}<span class="slot-count" title="{{slot.resourceTooltip}}">{{slot.resourceLabel}}</span>{{/if}}
+                {{#if slot.canUse}}<button type="button" class="slot-use slot-icon" data-item-id="{{slot.itemId}}" title="{{../tooltips.rollItem}}&#10;{{slot.tooltip}}"><i class="fas fa-dice-d20"></i></button>{{/if}}
+                {{#if slot.canOpen}}<button type="button" class="slot-open slot-icon" data-item-id="{{slot.itemId}}" title="{{../tooltips.openItem}}&#10;{{slot.tooltip}}"><i class="fas fa-info-circle"></i></button>{{/if}}
+                {{#if slot.canDelete}}<button type="button" class="slot-delete slot-icon" data-slot-key="{{slot.key}}" data-item-id="{{slot.itemId}}" title="Quitar de la ficha&#10;{{slot.tooltip}}"><i class="fas fa-trash-alt"></i></button>{{/if}}
+              </div>
+            {{/each}}
+          </div>
+        </div>
+      </div>
+
+      <div class="history-block" title="{{tooltips.history}}">
+        <div class="top-label"><span>HISTORIA Y TRASFONDO</span></div>
+        <textarea name="system.history" spellcheck="false" placeholder="Historia, deudas, vicios, enemigos, alianzas..." title="{{tooltips.history}}">{{system.history}}</textarea>
+      </div>
+    </div>
+  </div>
+</form>

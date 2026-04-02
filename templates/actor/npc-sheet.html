@@ -1,0 +1,69 @@
+<form class="frontierscum" autocomplete="off">
+  <div class="npcsheet">
+    <div class="npcsheet-header">
+      <div class="portrait">
+        <div class="portrait-inner">
+          <img src="{{actor.img}}" title="{{actor.name}}" data-edit="img"/>
+        </div>
+      </div>
+
+      <div class="fields-col">
+        <div class="fields">
+          <div class="field-row">
+            <label title="{{tooltips.name}}">NOMBRE</label>
+            <input type="text" name="name" value="{{actor.name}}" spellcheck="false" title="{{tooltips.name}}"/>
+          </div>
+          <div class="field-row">
+            <textarea name="system.notes" placeholder="Instinto, aspecto, relación, territorio..." title="{{tooltips.npcNotes}}">{{system.notes}}</textarea>
+          </div>
+        </div>
+
+        <div class="hp-block">
+          <div class="stat-block hp">
+            <div class="name"><span title="{{tooltips.hp}}">HP</span></div>
+            <div class="value">
+              <input type="number" name="system.hp.value" value="{{system.hp.value}}" placeholder="0" title="{{tooltips.hp}}"/>
+            </div>
+          </div>
+          <div class="stat-block max-hp">
+            <div class="name"><span title="{{tooltips.maxHp}}">MAX</span></div>
+            <div class="value">
+              <input type="number" name="system.hp.max" value="{{system.hp.max}}" placeholder="0" title="{{tooltips.maxHp}}"/>
+            </div>
+          </div>
+          <div class="stat-block max-hp">
+            <div class="name"><span title="{{tooltips.npcMorale}}">MORAL</span></div>
+            <div class="value">
+              <input type="number" name="system.morale" value="{{system.morale}}" placeholder="7" title="{{tooltips.npcMorale}}"/>
+            </div>
+          </div>
+        </div>
+
+        <div class="button-row">
+          <button type="button" class="reaction-button" name="reaction" title="Tira la tabla de reacción para este PNJ.">
+            <i class="fas fa-dice-six"></i>&nbsp;REACCION
+          </button>
+          <button type="button" class="morale-button" name="morale" title="{{tooltips.npcMorale}}">
+            <i class="fas fa-dice-six"></i>&nbsp;MORAL
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="npcsheet-body">
+      <div class="fields">
+        <div class="field-row">
+          <label title="{{tooltips.npcAttack}}">ATAQUE</label>
+          <input type="text" name="system.attack" value="{{system.attack}}" spellcheck="false" title="{{tooltips.npcAttack}}"/>
+        </div>
+        <div class="field-row">
+          <label title="{{tooltips.npcProtection}}">PROTECCIÓN</label>
+          <input type="text" name="system.protection" value="{{system.protection}}" spellcheck="false" title="{{tooltips.npcProtection}}"/>
+        </div>
+        <div class="field-row">
+          <textarea name="system.special" placeholder="Emboscada, veneno, ataques múltiples, rarezas..." title="{{tooltips.npcSpecial}}">{{system.special}}</textarea>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>

@@ -1,0 +1,1165 @@
+@import url("https://fonts.googleapis.com/css2?family=Smokum&family=Satisfy&family=Inconsolata&family=Ultra&family=Alegreya&display=swap");
+.frontierscum {
+  box-sizing: border-box;
+  padding-left: 10px;
+  padding-right: 10px;
+  background:
+    linear-gradient(rgba(244, 236, 219, 0.97), rgba(232, 220, 197, 0.97)),
+    radial-gradient(circle at top, rgba(93, 58, 27, 0.08), transparent 55%);
+  border: 2px solid #1b130d;
+  box-shadow: 0 0 0 4px rgba(27, 19, 13, 0.08);
+}
+.frontierscum .scumsheet {
+  max-width: 100%;
+  width: 100%;
+}
+.frontierscum .horsesheet {
+  max-width: 100%;
+  width: 100%;
+}
+.frontierscum .npcsheet,
+.frontierscum .itemsheet {
+  max-width: 100%;
+  width: 100%;
+}
+
+.frontierscum {
+  /* Hide the browser's default checkbox */
+  /* Create a custom checkbox */
+  /* When the checkbox is checked, add a blue background */
+}
+.frontierscum input[type=number],
+.frontierscum input[type=text],
+.frontierscum select {
+  border: 0;
+  border-radius: 0;
+  outline: 0;
+  background: transparent;
+  border-bottom: 1px dotted black;
+  font-family: "Inconsolata", monospace;
+  font-size: 1rem;
+  text-align: center;
+}
+.frontierscum textarea {
+  background-color: #eeeeee;
+  border: none;
+  border-radius: 0;
+  font-family: "Inconsolata", monospace;
+  font-size: 1rem;
+  padding: 2px;
+  resize: none;
+}
+.frontierscum .top-label {
+  background-color: black;
+  color: white;
+  font-family: "Smokum", cursive;
+  font-size: 1.5rem;
+  text-align: center;
+  text-transform: uppercase;
+}
+.frontierscum label {
+  display: inline;
+  margin: 0;
+  padding: 0;
+  text-transform: uppercase;
+  width: unset;
+}
+.frontierscum .check-container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+.frontierscum .check-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+.frontierscum .checkmark {
+  position: absolute;
+  top: -3px;
+  left: 12px;
+  height: 18px;
+  width: 18px;
+  border-radius: 50%;
+  border: 1px dotted black;
+  font-size: 2rem;
+}
+.frontierscum .check-container input:checked ~ .checkmark {
+  background-color: black;
+}
+.frontierscum .check-checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+.frontierscum .check-container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+body.sheet-darkmode .charsheet {
+  background-color: black;
+  color: white;
+}
+body.sheet-darkmode .charsheet .frontierscum {
+  border: 1px solid white;
+}
+body.sheet-darkmode .charsheet .frontierscum input[type=number],
+body.sheet-darkmode .charsheet .frontierscum input[type=text],
+body.sheet-darkmode .charsheet .frontierscum select {
+  border-bottom: 1px dotted white;
+}
+body.sheet-darkmode .charsheet .frontierscum textarea {
+  background-color: #333;
+}
+body.sheet-darkmode .charsheet .frontierscum .top-label {
+  background-color: white;
+  color: black;
+}
+body.sheet-darkmode .charsheet .frontierscum .checkmark {
+  border: 1px dotted white;
+}
+body.sheet-darkmode .charsheet .frontierscum .check-container input:checked ~ .checkmark {
+  background-color: white;
+}
+body.sheet-darkmode .charsheet .frontierscum .horsesheet-header .title {
+  color: white;
+  -webkit-text-fill-color: black; /* Will override color (regardless of order) */
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: white;
+}
+body.sheet-darkmode .charsheet .frontierscum .horsesheet-header .rider {
+  filter: invert(100%);
+}
+body.sheet-darkmode .charsheet .frontierscum .horsesheet-body .inner1, body.sheet-darkmode .charsheet .frontierscum .horsesheet-body .inner2 {
+  border-bottom: 5px solid white;
+  border-left: 5px solid white;
+  border-right: 5px solid white;
+}
+body.sheet-darkmode .charsheet .frontierscum .scumsheet-header .fs-logo {
+  border-bottom: 4px solid white;
+  border-top: 4px solid white;
+}
+body.sheet-darkmode .charsheet .frontierscum .scumsheet-body .abilities-block .ability-col .ability {
+  border-left: 2px solid white;
+}
+body.sheet-darkmode .charsheet .frontierscum .scumsheet-body .abilities-block .ability-col .ability .name {
+  background-color: white;
+  color: black;
+}
+body.sheet-darkmode .charsheet .frontierscum .scumsheet-body .abilities-block .ability-col .ability:last-child {
+  border-bottom: 2px solid white;
+}
+body.sheet-darkmode .charsheet .frontierscum .scumsheet-body .portrait-col {
+  border: 2px solid white;
+  flex: 0 0 280;
+  padding: 4px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+body.sheet-darkmode .charsheet .frontierscum .scumsheet-body .portrait-col .portrait-inner {
+  border: 2px solid white;
+}
+body.sheet-darkmode .charsheet .frontierscum .scumsheet-body .condition-col {
+  border: 2px solid white;
+}
+body.sheet-darkmode .charsheet .frontierscum .scumsheet-body .condition-col .drunk {
+  border-top: 2px solid white;
+}
+body.sheet-darkmode .charsheet .frontierscum .scumsheet-body .condition-col .notes {
+  border-top: 2px solid white;
+}
+body.sheet-darkmode .charsheet .frontierscum .scumsheet-body .equipment-block .eq-section {
+  border-left: 2px solid white;
+  border-right: 2px solid white;
+  border-bottom: 2px solid white;
+}
+body.sheet-darkmode .charsheet .frontierscum .scumsheet-body .equipment-block .eq-section.skills .skills-label {
+  border-bottom: 2px solid white;
+}
+body.sheet-darkmode .charsheet .frontierscum .scumsheet-body .equipment-block .eq-section.skills .eq-row {
+  border-left: 2px solid white;
+  border-right: 2px solid white;
+}
+
+.frontierscum.sheet .window-content,
+.frontierscum-dialog .window-content {
+  background: none;
+  background-color: white;
+  overflow: auto;
+}
+
+.frontierscum .scumsheet .scumsheet-header {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+.frontierscum .scumsheet .scumsheet-header .fs-logo {
+  border-bottom: 4px solid black;
+  border-top: 4px solid black;
+  font-family: "Smokum", cursive;
+  font-size: 2.5rem;
+  line-height: 2.2rem;
+  padding-top: 2px;
+  margin-bottom: 5px;
+}
+.frontierscum .scumsheet .scumsheet-header .wanted {
+  font-family: "Ultra", serif;
+  font-size: 7rem;
+  line-height: 5.5rem;
+}
+.frontierscum .scumsheet .scumsheet-header .dead-or-alive {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 12px;
+  justify-content: center;
+  font-family: "Satisfy", cursive;
+  font-size: 1.4rem;
+}
+.frontierscum .scumsheet .scumsheet-header .dead-or-alive label {
+  display: inline;
+  margin-bottom: 0;
+}
+.frontierscum .scumsheet .scumsheet-header .dead-or-alive label .checkmark {
+  top: 5px;
+  left: 15px;
+}
+.frontierscum .scumsheet .scumsheet-header .dead-or-alive label span {
+  font-size: 1.4rem;
+  text-transform: none;
+}
+
+.frontierscum .scumsheet-body {
+  display: flex;
+  flex-direction: column;
+}
+.frontierscum .scumsheet-body .name-block {
+  display: flex;
+  width: 100%;
+}
+.frontierscum .scumsheet-body .name-block .fields {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.frontierscum .scumsheet-body .name-block .fields label {
+  font-family: "Smokum", cursive;
+  font-size: 1.7rem;
+  margin-right: 4px;
+}
+.frontierscum .scumsheet-body .name-block .fields input {
+  flex: 1;
+}
+.frontierscum .scumsheet-body .name-block .fields .field-row {
+  display: flex;
+  width: 100%;
+}
+.frontierscum .scumsheet-body .name-block .reward {
+  flex: 0 0 140px;
+  margin-left: 10px;
+  text-align: center;
+}
+.frontierscum .scumsheet-body .name-block .reward label {
+  font-family: "Ultra", serif;
+  font-size: 1.2rem;
+  height: 20px;
+}
+.frontierscum .scumsheet-body .name-block .reward .reward-row {
+  align-items: center;
+  display: flex;
+}
+.frontierscum .scumsheet-body .name-block .reward .reward-row .input-wrapper {
+  align-items: center;
+  display: flex;
+  flex: 1;
+  height: 44px;
+  justify-content: center;
+}
+.frontierscum .scumsheet-body .name-block .reward .reward-row .big-s {
+  font-family: "Ultra", serif;
+  font-size: 1.4rem;
+  line-height: 1.2rem;
+  text-decoration: underline;
+}
+.frontierscum .scumsheet-body .abilities-block {
+  display: flex;
+}
+.frontierscum .scumsheet-body .abilities-block .ability-col {
+  display: flex;
+  flex: 0 0 80px;
+  flex-direction: column;
+}
+.frontierscum .scumsheet-body .abilities-block .ability-col .ability {
+  align-items: center;
+  border-bottom: none;
+  border-left: 2px solid black;
+  border-right: none;
+  border-top: none;
+  display: flex;
+  flex: 0 0 59px;
+  flex-direction: column;
+}
+.frontierscum .scumsheet-body .abilities-block .ability-col .ability .name {
+  background-color: black;
+  color: white;
+  flex: 0 0 30px;
+  padding-top: 2px;
+  width: 100%;
+}
+.frontierscum .scumsheet-body .abilities-block .ability-col .ability .name .ability-name {
+  cursor: pointer;
+}
+.frontierscum .scumsheet-body .abilities-block .ability-col .ability .name .ability-name:hover {
+  text-shadow: 0 0 10px white;
+}
+.frontierscum .scumsheet-body .abilities-block .ability-col .ability .value {
+  align-items: center;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2px;
+  width: 100%;
+}
+.frontierscum .scumsheet-body .abilities-block .ability-col .ability .value input {
+  height: 100%;
+  text-align: center;
+  width: 30px;
+}
+.frontierscum .scumsheet-body .abilities-block .ability-col .ability:last-child {
+  border-bottom: 2px solid black;
+}
+.frontierscum .scumsheet-body .abilities-block .portrait-col {
+  align-items: center;
+  border: 2px solid black;
+  display: flex;
+  flex: 0 0 234px;
+  justify-content: center;
+}
+.frontierscum .scumsheet-body .abilities-block .portrait-col img {
+  border: 2px solid black;
+  height: 224px;
+  width: 224px;
+  padding: 0;
+  margin: 0;
+}
+.frontierscum .scumsheet-body .abilities-block .condition-col {
+  border: 2px solid black;
+  display: flex;
+  margin-left: 2px;
+  flex: 1;
+  flex-direction: column;
+}
+.frontierscum .scumsheet-body .abilities-block .condition-col .conditions-and-notes {
+  flex: 0 0 30px;
+}
+.frontierscum .scumsheet-body .abilities-block .condition-col .condition-row {
+  display: flex;
+  flex: 0 0 38px;
+  padding: 2px;
+}
+.frontierscum .scumsheet-body .abilities-block .condition-col .condition-row textarea {
+  font-size: 0.8rem;
+}
+.frontierscum .scumsheet-body .abilities-block .condition-col .condition-row .checkbox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 50px;
+}
+.frontierscum .scumsheet-body .abilities-block .condition-col .condition-row .non-checkbox {
+  flex: 1;
+  font-family: "Inconsolata", monospace;
+  font-size: 0.8rem;
+}
+.frontierscum .scumsheet-body .abilities-block .condition-col .condition-row .non-checkbox input {
+  font-size: 0.8rem;
+  height: 1rem;
+}
+.frontierscum .scumsheet-body .abilities-block .condition-col .condition-row .checkmark {
+  left: 5px;
+}
+.frontierscum .scumsheet-body .abilities-block .condition-col .condition-row.miserable input {
+  width: 110px;
+}
+.frontierscum .scumsheet-body .abilities-block .condition-col .condition-row.drunk {
+  border-top: 2px solid black;
+}
+.frontierscum .scumsheet-body .abilities-block .condition-col .condition-row.drunk input {
+  width: 70px;
+}
+.frontierscum .scumsheet-body .abilities-block .condition-col .condition-row.condition-items {
+  border-top: 2px solid black;
+  flex: 1 1 auto;
+  padding: 0;
+}
+.frontierscum .scumsheet-body .abilities-block .condition-col .condition-row.condition-items .condition-stack {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+.frontierscum .scumsheet-body .abilities-block .condition-col .condition-row.condition-items .condition-stack-label {
+  background: rgba(0, 0, 0, 0.06);
+  border-bottom: 1px solid black;
+  font-family: "Ultra", serif;
+  font-size: 0.8rem;
+  letter-spacing: 0.04em;
+  line-height: 1.2;
+  padding: 2px 8px;
+  text-align: center;
+}
+.frontierscum .scumsheet-body .abilities-block .condition-col .condition-row.condition-items .condition-slot-row {
+  align-items: center;
+  border-bottom: 1px dotted black;
+  display: flex;
+  gap: 4px;
+  min-height: 24px;
+  padding: 2px 4px;
+}
+.frontierscum .scumsheet-body .abilities-block .condition-col .condition-row.condition-items .condition-slot-row:last-child {
+  border-bottom: none;
+}
+.frontierscum .scumsheet-body .abilities-block .condition-col .condition-row.condition-items .condition-slot-row input {
+  border: none;
+  font-size: 0.8rem;
+  height: 20px;
+}
+.frontierscum .scumsheet-body .abilities-block .condition-col .condition-row.notes {
+  border-top: 2px solid black;
+  flex: 0 0 20px;
+  padding-bottom: 0px;
+}
+.frontierscum .scumsheet-body .abilities-block .condition-col .condition-row.notes textarea {
+  border: none;
+  height: 30px;
+  width: 100%;
+}
+.frontierscum .scumsheet-body .hp-block {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: space-around;
+  margin-bottom: 5px;
+}
+.frontierscum .scumsheet-body .hp-block .stat-block {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 120px;
+}
+.frontierscum .scumsheet-body .hp-block .stat-block input {
+  width: 100px;
+}
+.frontierscum .scumsheet-body .hp-block .stat-block .name span {
+  font-family: "Ultra", serif;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+}
+.frontierscum .scumsheet-body .hp-block .stat-block .value input {
+  font-size: 1.5rem;
+  width: 2.8rem;
+}
+.frontierscum .scumsheet-body .equipment-block {
+  display: flex;
+}
+.frontierscum .scumsheet-body .equipment-block input[type=number],
+.frontierscum .scumsheet-body .equipment-block input[type=text] {
+  font-size: 0.9rem;
+}
+.frontierscum .scumsheet-body .equipment-block .eq-col-1 {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.frontierscum .scumsheet-body .equipment-block .eq-col-2 {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  margin-left: 2px;
+  margin-right: 2px;
+}
+.frontierscum .scumsheet-body .equipment-block .eq-col-3 {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.frontierscum .scumsheet-body .equipment-block .eq-section {
+  border-bottom: 2px solid black;
+  border-left: 2px solid black;
+  border-right: 2px solid black;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  position: relative;
+}
+.frontierscum .scumsheet-body .equipment-block .eq-row {
+  align-items: center;
+  display: flex;
+  flex: 0 0 30px;
+  gap: 2px;
+  justify-content: center;
+  padding: 2px;
+}
+.frontierscum .scumsheet-body .equipment-block .eq-row input {
+  flex: 1;
+  height: 100%;
+  width: 100%;
+  min-width: 0;
+}
+.frontierscum .scumsheet-body .equipment-block .eq-section[data-slot-group]::after,
+.frontierscum .horsesheet .on-your-horse[data-slot-group]::after {
+  color: rgba(27, 19, 13, 0.35);
+  content: "arrastra equipo aqui";
+  font-family: "Inconsolata", monospace;
+  font-size: 0.7rem;
+  position: absolute;
+  right: 8px;
+  top: 6px;
+}
+.frontierscum .scumsheet-body .equipment-block .eq-section.skills {
+  border-left: none;
+  border-right: none;
+  justify-content: space-between;
+}
+.frontierscum .scumsheet-body .equipment-block .eq-section.skills .skills-label {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 2px solid black;
+  flex: 0 0 30px;
+  font-family: "Ultra", serif;
+  font-size: 1.2rem;
+  line-height: 1rem;
+  text-transform: uppercase;
+}
+.frontierscum .scumsheet-body .equipment-block .eq-section.skills .eq-row {
+  border-left: 2px solid black;
+  border-right: 2px solid black;
+}
+.frontierscum .scumsheet-body .equipment-block .eq-section.on-your-back {
+  margin-top: 3px;
+  height: 149px;
+}
+.frontierscum .scumsheet-body .equipment-block .eq-section.on-your-back .eq-row {
+  flex: 0 0 40px;
+}
+.frontierscum .scumsheet-body .equipment-block .eq-section.in-your-pockets {
+  justify-content: space-between;
+  border-bottom: 2px solid black;
+  border-left: 2px solid black;
+  border-right: 2px solid black;
+  height: 273px;
+}
+.frontierscum .scumsheet-body .equipment-block .eq-section.in-your-pockets .eq-row {
+  border-left: none;
+  border-right: none;
+  flex: 1;
+}
+
+.frontierscum .horsesheet .horsesheet-header {
+  position: relative;
+  overflow: visible;
+  min-height: 118px;
+  margin-bottom: 10px;
+}
+.frontierscum .horsesheet .horsesheet-header .title {
+  color: black;
+  font-family: "Ultra", serif;
+  font-size: clamp(3.8rem, 8vw, 5rem);
+  letter-spacing: 0.16rem;
+  line-height: 0.9;
+  padding: 4px 12px 0;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+  -webkit-text-fill-color: white; /* Will override color (regardless of order) */
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: black;
+}
+.frontierscum .horsesheet .horsesheet-header .rider {
+  background-image: url("../assets/img/rider1.png");
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 150px;
+  width: 150px;
+  opacity: 0.12;
+  pointer-events: none;
+  position: absolute;
+  top: -2px;
+  right: 20px;
+  z-index: 1;
+}
+
+.frontierscum .horsesheet .horsesheet-body {
+  display: flex;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+.frontierscum .horsesheet .horsesheet-body input {
+  width: 100%;
+}
+.frontierscum .horsesheet .horsesheet-body .inner1 {
+  padding: 2px;
+  border-top: 5px solid black;
+}
+.frontierscum .horsesheet .horsesheet-body .inner1, .frontierscum .horsesheet .horsesheet-body .inner2 {
+  border-bottom: 5px solid black;
+  border-left: 5px solid black;
+  border-right: 5px solid black;
+  flex: 1;
+}
+.frontierscum .horsesheet .horsesheet-body .inner2 {
+  border-top: 5px solid black;
+}
+.frontierscum .horsesheet .horsesheet-body .name-block {
+  padding: 5px;
+}
+.frontierscum .horsesheet .horsesheet-body .name-block .field-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 4px;
+}
+.frontierscum .horsesheet .horsesheet-body .name-block .field-row label {
+  font-family: "Smokum", cursive;
+  font-size: 1.45rem;
+  margin-right: 4px;
+  line-height: 1;
+}
+.frontierscum .horsesheet .horsesheet-body .name-block .field-row input {
+  padding-left: 10px;
+  text-align: left;
+}
+.frontierscum .horsesheet .horsesheet-body .bottom-cols {
+  display: flex;
+  gap: 10px;
+}
+.frontierscum .horsesheet .horsesheet-body .bottom-cols .left-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 0 0 230px;
+  padding-left: 6px;
+  padding-right: 6px;
+}
+.frontierscum .horsesheet .horsesheet-body .bottom-cols .left-col .portrait-block {
+  border: 2px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 210px;
+  width: 210px;
+  margin-bottom: 10px;
+}
+.frontierscum .horsesheet .horsesheet-body .bottom-cols .left-col .portrait-block img {
+  border: 2px solid black;
+  height: 200px;
+  width: 200px;
+  padding: 0;
+  margin: 0;
+}
+.frontierscum .horsesheet .horsesheet-body .bottom-cols .right-col {
+  flex: 1;
+  min-width: 0;
+}
+.frontierscum .horsesheet .horsesheet-body .on-your-horse {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  min-height: 100%;
+}
+.frontierscum .horsesheet .horsesheet-body .on-your-horse .on-horse-row {
+  align-items: center;
+  display: flex;
+  flex: 0 0 20px;
+  gap: 2px;
+  padding: 2px;
+}
+.frontierscum .horsesheet .horsesheet-body .on-your-horse .on-horse-row input[type=number],
+.frontierscum .horsesheet .horsesheet-body .on-your-horse .on-horse-row input[type=text] {
+  flex: 1;
+  font-size: 0.9rem;
+}
+.frontierscum .horsesheet .horsesheet-body .on-your-horse .on-horse-row:nth-child(10), .frontierscum .horsesheet .horsesheet-body .on-your-horse .on-horse-row:nth-child(11), .frontierscum .horsesheet .horsesheet-body .on-your-horse .on-horse-row:nth-child(12) {
+  padding-left: 10px;
+}
+.frontierscum .horsesheet .horsesheet-body .stolen-block {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+  width: 100%;
+}
+.frontierscum .horsesheet .horsesheet-body .stolen-block .stats {
+  width: 100%;
+  max-width: 230px;
+}
+.frontierscum .horsesheet .horsesheet-body .stolen-block .stats .stat-row {
+  display: flex;
+  justify-content: space-between;
+}
+.frontierscum .horsesheet .horsesheet-body .stolen-block .stats .stat-row .stat-block {
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+.frontierscum .horsesheet .horsesheet-body .stolen-block .stats .stat-row .stat-block label {
+  font-family: "Ultra", serif;
+  font-size: 1.08rem;
+  margin-right: 6px;
+  width: 72px;
+  text-align: right;
+}
+.frontierscum .horsesheet .horsesheet-body .stolen-block .stats .stat-row .stat-block .horseshoe {
+  background-image: url("../assets/img/horseshoe.png");
+  background-size: 100% 100%;
+  height: 40px;
+  width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.frontierscum .horsesheet .horsesheet-body .stolen-block .stats .stat-row .stat-block .horseshoe input {
+  margin-right: 6px;
+  width: 18px;
+}
+.frontierscum .horsesheet .horsesheet-body .stolen-block .stats .stat-row .stat-block:last-child label {
+  width: 52px;
+}
+.frontierscum .horsesheet .horse-button-row {
+  margin-top: 8px;
+}
+.frontierscum .horsesheet .horse-button-row button {
+  min-height: 32px;
+  width: 100%;
+}
+
+@media (max-width: 700px) {
+  .frontierscum .horsesheet .horsesheet-header {
+    min-height: 96px;
+  }
+  .frontierscum .horsesheet .horsesheet-header .title {
+    font-size: clamp(2.8rem, 9vw, 4rem);
+    letter-spacing: 0.08rem;
+  }
+  .frontierscum .horsesheet .horsesheet-header .rider {
+    height: 110px;
+    width: 110px;
+    right: 8px;
+    top: 0;
+  }
+  .frontierscum .horsesheet .horsesheet-body .bottom-cols {
+    flex-direction: column;
+  }
+  .frontierscum .horsesheet .horsesheet-body .bottom-cols .left-col {
+    flex-basis: auto;
+    width: 100%;
+  }
+  .frontierscum .horsesheet .horsesheet-body .stolen-block .stats {
+    max-width: 260px;
+  }
+}
+
+.frontierscum .npcsheet {
+  display: flex;
+  flex-direction: column;
+  padding-top: 10px;
+}
+.frontierscum .npcsheet .fields {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.frontierscum .npcsheet .fields label {
+  font-family: "Smokum", cursive;
+  font-size: 1.7rem;
+  margin-right: 4px;
+}
+.frontierscum .npcsheet .fields input {
+  flex: 1;
+}
+.frontierscum .npcsheet .fields textarea {
+  height: 100px;
+  padding: 4px;
+  width: 100%;
+}
+.frontierscum .npcsheet .fields .field-row {
+  display: flex;
+  width: 100%;
+}
+.frontierscum .npcsheet .npcsheet-header {
+  display: flex;
+  flex: 0 0 234px;
+  margin-bottom: 10px;
+}
+.frontierscum .npcsheet .npcsheet-header .portrait {
+  align-items: center;
+  border: 2px solid black;
+  display: flex;
+  flex: 0 0 232px;
+  flex-direction: column;
+  justify-content: center;
+}
+.frontierscum .npcsheet .npcsheet-header .portrait .portrait-inner {
+  height: 222px;
+  width: 222px;
+}
+.frontierscum .npcsheet .npcsheet-header .portrait .portrait-inner img {
+  border: 2px solid black;
+  height: 222px;
+  width: 222px;
+}
+.frontierscum .npcsheet .npcsheet-header .fields-col {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-left: 10px;
+}
+.frontierscum .npcsheet .npcsheet-header .fields-col .hp-block {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 10px;
+}
+.frontierscum .npcsheet .npcsheet-header .fields-col .hp-block .stat-block {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.frontierscum .npcsheet .npcsheet-header .fields-col .hp-block .stat-block input {
+  width: 100px;
+}
+.frontierscum .npcsheet .npcsheet-header .fields-col .hp-block .stat-block .name span {
+  font-family: "Ultra", serif;
+  font-size: 1.3rem;
+  text-transform: uppercase;
+}
+.frontierscum .npcsheet .npcsheet-header .fields-col .hp-block .stat-block .value input {
+  font-size: 1.5rem;
+  width: 2.8rem;
+}
+.frontierscum .npcsheet .npcsheet-header .fields-col .button-row {
+  display: flex;
+}
+.frontierscum .npcsheet .npcsheet-header .fields-col .button-row button {
+  background-color: black;
+  border: none;
+  border-radius: 0;
+  color: white;
+  cursor: pointer;
+  font-family: "Ultra", serif;
+  text-transform: uppercase;
+}
+.frontierscum .itemsheet {
+  display: flex;
+  flex-direction: column;
+  padding-top: 10px;
+}
+.frontierscum .itemsheet .fields {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.frontierscum .itemsheet .fields label {
+  font-family: "Smokum", cursive;
+  font-size: 1.7rem;
+  margin-right: 4px;
+}
+.frontierscum .itemsheet .fields input {
+  flex: 1;
+}
+.frontierscum .itemsheet .fields select {
+  flex: 1;
+}
+.frontierscum .itemsheet .fields textarea {
+  height: 56px;
+  padding: 4px;
+  width: 100%;
+}
+.frontierscum .itemsheet .fields .field-row {
+  align-items: center;
+  display: flex;
+  gap: 8px;
+  width: 100%;
+}
+.frontierscum .itemsheet .itemsheet-header {
+  display: flex;
+  flex: 0 0 167px;
+  margin-bottom: 10px;
+}
+.frontierscum .itemsheet .itemsheet-header .portrait {
+  align-items: center;
+  border: 2px solid black;
+  display: flex;
+  flex: 0 0 165px;
+  flex-direction: column;
+  justify-content: center;
+}
+.frontierscum .itemsheet .itemsheet-header .portrait .portrait-inner {
+  height: 154px;
+  width: 154px;
+}
+.frontierscum .itemsheet .itemsheet-header .portrait .portrait-inner img {
+  border: 2px solid black;
+  height: 155px;
+  width: 155px;
+}
+.frontierscum .itemsheet .itemsheet-header .fields-col {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-left: 10px;
+}
+.frontierscum .fs-item-type-pill {
+  align-items: center;
+  background: #1b130d;
+  color: #f5ebda;
+  display: inline-flex;
+  font-family: "Ultra", serif;
+  font-size: 0.8rem;
+  justify-content: center;
+  letter-spacing: 0.04em;
+  min-height: 32px;
+  padding: 0 12px;
+  text-transform: uppercase;
+}
+.frontierscum .itemsheet .itemsheet-header .fields-col .button-row {
+  display: flex;
+}
+.frontierscum .itemsheet .itemsheet-header .fields-col .button-row button {
+  background-color: black;
+  border: none;
+  border-radius: 0;
+  color: white;
+  cursor: pointer;
+  font-family: "Ultra", serif;
+  text-transform: uppercase;
+}
+.frontierscum .slot-use,
+.frontierscum .slot-sacrifice,
+.frontierscum .slot-open,
+.frontierscum .slot-delete,
+.frontierscum .skill-use,
+.frontierscum .slot-icon {
+  background: #1b130d;
+  border: 1px solid #1b130d;
+  color: #f5ebda;
+  cursor: pointer;
+  font-family: "Ultra", serif;
+  font-size: 0.72rem;
+  flex: 0 0 22px;
+  height: 22px;
+  line-height: 1;
+  min-height: 22px;
+  min-width: 22px;
+  padding: 0;
+  text-transform: none;
+}
+.frontierscum .slot-icon i,
+.frontierscum .skill-use i {
+  margin: 0;
+  pointer-events: none;
+}
+.frontierscum .slot-use:hover,
+.frontierscum .slot-sacrifice:hover,
+.frontierscum .slot-open:hover,
+.frontierscum .slot-delete:hover,
+.frontierscum .skill-use:hover {
+  background: #3c2412;
+}
+.frontierscum .slot-count {
+  align-items: center;
+  background: #f1e3c9;
+  border: 1px solid #1b130d;
+  color: #1b130d;
+  display: inline-flex;
+  flex: 0 0 22px;
+  font-family: "Ultra", serif;
+  font-size: 0.72rem;
+  height: 22px;
+  justify-content: center;
+  line-height: 1;
+  min-width: 22px;
+}
+.frontierscum .history-block {
+  margin-top: 12px;
+}
+.frontierscum .history-block textarea {
+  border: 2px solid black;
+  height: 120px;
+  padding: 8px;
+  width: 100%;
+}
+
+.frontierscum .action-strip {
+  display: grid;
+  gap: 8px;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  margin: 12px 0;
+}
+
+.frontierscum .fs-action,
+.frontierscum .horse-button-row button {
+  background: #1b130d;
+  border: 1px solid #1b130d;
+  color: #f5ebda;
+  cursor: pointer;
+  font-family: "Ultra", serif;
+  font-size: 0.85rem;
+  letter-spacing: 0.03em;
+  min-height: 38px;
+  padding: 6px 10px;
+  text-transform: uppercase;
+  transition: transform 120ms ease, background-color 120ms ease;
+}
+
+.frontierscum .fs-action:hover,
+.frontierscum .horse-button-row button:hover,
+.frontierscum .npcsheet .npcsheet-header .fields-col .button-row button:hover {
+  background: #3c2412;
+  transform: translateY(-1px);
+}
+
+.frontierscum .fs-action:active,
+.frontierscum .horse-button-row button:active,
+.frontierscum .npcsheet .npcsheet-header .fields-col .button-row button:active {
+  transform: translateY(0);
+}
+
+.frontierscum .horse-button-row {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.fs-dialog-grid {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+}
+
+.fs-dialog-grid.fs-dialog-checkboxes {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.fs-dialog-grid label {
+  font-weight: 600;
+}
+.fs-dialog-note {
+  background: rgba(27, 19, 13, 0.08);
+  border: 1px solid rgba(27, 19, 13, 0.18);
+  font-family: "Inconsolata", monospace;
+  padding: 6px 8px;
+}
+.frontierscum-dialog .dialog-buttons button {
+  background: #1b130d;
+  border: 1px solid #1b130d;
+  border-radius: 0;
+  color: #f5ebda;
+  font-family: "Ultra", serif;
+  text-transform: uppercase;
+}
+.frontierscum-dialog .dialog-buttons button:hover {
+  background: #3c2412;
+}
+.frontierscum-dialog .fs-dialog-shell {
+  background:
+    linear-gradient(rgba(244, 236, 219, 0.97), rgba(232, 220, 197, 0.97)),
+    radial-gradient(circle at top, rgba(93, 58, 27, 0.08), transparent 55%);
+  border: 2px solid #1b130d;
+  padding: 12px;
+}
+.frontierscum-dialog select,
+.frontierscum-dialog input[type=number],
+.frontierscum-dialog input[type=text] {
+  background: transparent;
+  border: 0;
+  border-bottom: 1px dotted #1b130d;
+  border-radius: 0;
+  font-family: "Inconsolata", monospace;
+  padding: 4px 6px;
+}
+
+.fs-chat-card {
+  background: linear-gradient(180deg, #f5ebda 0%, #ebdcc2 100%);
+  border: 1px solid #1b130d;
+  padding: 10px 12px;
+}
+
+.fs-chat-title {
+  font-family: "Ultra", serif;
+  font-size: 1rem;
+  text-transform: uppercase;
+}
+
+.fs-chat-subtitle,
+.fs-chat-details,
+.fs-chat-footer {
+  font-family: "Inconsolata", monospace;
+  margin-top: 4px;
+}
+
+.fs-chat-outcome {
+  font-family: "Smokum", cursive;
+  font-size: 1.4rem;
+  margin-top: 6px;
+}
+
+.fs-chat-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.fs-chat-action {
+  background: #1b130d;
+  border: 1px solid #1b130d;
+  color: #f5ebda;
+  cursor: pointer;
+  font-family: "Ultra", serif;
+  font-size: 0.72rem;
+  min-height: 28px;
+  padding: 4px 8px;
+  text-transform: uppercase;
+}
+
+.fs-chat-action:hover {
+  background: #3c2412;
+}
+
+@media (max-width: 720px) {
+  .frontierscum .action-strip {
+    grid-template-columns: 1fr 1fr;
+  }
+  .frontierscum .scumsheet-body .abilities-block,
+  .frontierscum .scumsheet-body .equipment-block,
+  .frontierscum .horsesheet .horsesheet-body .bottom-cols,
+  .frontierscum .npcsheet .npcsheet-header,
+  .frontierscum .itemsheet .itemsheet-header {
+    flex-direction: column;
+  }
+  .frontierscum .scumsheet-body .abilities-block .portrait-col,
+  .frontierscum .npcsheet .npcsheet-header .portrait,
+  .frontierscum .itemsheet .itemsheet-header .portrait {
+    margin-bottom: 10px;
+  }
+}

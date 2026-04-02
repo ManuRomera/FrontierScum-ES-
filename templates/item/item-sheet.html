@@ -1,0 +1,104 @@
+<form class="frontierscum" autocomplete="off">
+  <div class="itemsheet">
+    <div class="itemsheet-header">
+      <div class="portrait">
+        <div class="portrait-inner">
+          <img src="{{item.img}}" title="{{item.name}}" data-edit="img"/>
+        </div>
+      </div>
+
+      <div class="fields-col">
+        <div class="fields">
+          <div class="field-row">
+            <label title="{{tooltips.itemName}}">NOMBRE</label>
+            <input type="text" name="name" value="{{item.name}}" spellcheck="false" title="{{tooltips.itemName}}"/>
+          </div>
+          <div class="field-row">
+            <label title="{{tooltips.itemType}}">TIPO</label>
+            <div class="fs-item-type-pill" title="{{tooltips.itemType}}">{{itemTypeLabel}}</div>
+          </div>
+          <div class="field-row">
+            <label title="{{tooltips.itemCost}}">COSTE</label>
+            <input type="number" name="system.cost" value="{{system.cost}}" min="0" title="{{tooltips.itemCost}}"/>
+            <label title="{{tooltips.itemSlot}}">HUECO</label>
+            <select name="system.slot" title="{{tooltips.itemSlot}}">
+              {{#each slotTypes as |slot|}}
+                <option value="{{slot.key}}" {{#ifEq ../system.slot slot.key}}selected{{/ifEq}}>{{slot.label}}</option>
+              {{/each}}
+            </select>
+          </div>
+
+          {{#ifEq item.type "weapon"}}
+            <div class="field-row">
+              <label title="{{tooltips.weaponClass}}">CLASE</label>
+              <select name="system.weaponClass" title="{{tooltips.weaponClass}}">
+                {{#each weaponClasses as |entry|}}
+                  <option value="{{entry.key}}" {{#ifEq ../system.weaponClass entry.key}}selected{{/ifEq}}>{{entry.label}}</option>
+                {{/each}}
+              </select>
+              <label title="{{tooltips.weaponDamage}}">DAÑO</label>
+              <input type="text" name="system.damage" value="{{system.damage}}" spellcheck="false" title="{{tooltips.weaponDamage}}"/>
+            </div>
+            <div class="field-row">
+              <label title="{{tooltips.weaponRange}}">ALCANCE</label>
+              <input type="text" name="system.range" value="{{system.range}}" spellcheck="false" title="{{tooltips.weaponRange}}"/>
+              <label title="{{tooltips.weaponHands}}">MANOS</label>
+              <input type="text" name="system.hands" value="{{system.hands}}" spellcheck="false" title="{{tooltips.weaponHands}}"/>
+              <label title="{{tooltips.weaponAmmo}}">MUNICIÓN</label>
+              <input type="text" name="system.ammo" value="{{system.ammo}}" spellcheck="false" title="{{tooltips.weaponAmmo}}"/>
+            </div>
+          {{/ifEq}}
+
+          {{#ifEq item.type "protection"}}
+            <div class="field-row">
+              <label title="{{tooltips.protectionClass}}">CLASE</label>
+              <select name="system.protectionClass" title="{{tooltips.protectionClass}}">
+                {{#each protectionClasses as |entry|}}
+                  <option value="{{entry.key}}" {{#ifEq ../system.protectionClass entry.key}}selected{{/ifEq}}>{{entry.label}}</option>
+                {{/each}}
+              </select>
+              <label title="{{tooltips.protectionReduction}}">REDUCCIÓN</label>
+              <input type="text" name="system.reduction" value="{{system.reduction}}" spellcheck="false" title="{{tooltips.protectionReduction}}"/>
+            </div>
+          {{/ifEq}}
+
+          {{#ifEq item.type "ammo"}}
+            <div class="field-row">
+              <label title="{{tooltips.ammoClass}}">CLASE</label>
+              <select name="system.ammoClass" title="{{tooltips.ammoClass}}">
+                {{#each ammoClasses as |entry|}}
+                  <option value="{{entry.key}}" {{#ifEq ../system.ammoClass entry.key}}selected{{/ifEq}}>{{entry.label}}</option>
+                {{/each}}
+              </select>
+              <label title="{{tooltips.ammoQuantity}}">CANTIDAD</label>
+              <input type="number" name="system.quantity" value="{{system.quantity}}" min="0" title="{{tooltips.ammoQuantity}}"/>
+            </div>
+          {{/ifEq}}
+
+          {{#ifEq item.type "medical"}}
+            <div class="field-row">
+              <label title="{{tooltips.medicalHealing}}">CURACIÓN</label>
+              <input type="text" name="system.healing" value="{{system.healing}}" spellcheck="false" title="{{tooltips.medicalHealing}}"/>
+              <label title="{{tooltips.medicalUses}}">USOS</label>
+              <input type="number" name="system.uses" value="{{system.uses}}" min="1" title="{{tooltips.medicalUses}}"/>
+            </div>
+          {{/ifEq}}
+
+          <div class="field-row">
+            <label title="{{tooltips.itemSummary}}">RESUMEN</label>
+            <textarea name="system.summary" placeholder="Notas" title="{{tooltips.itemSummary}}">{{system.summary}}</textarea>
+          </div>
+          <div class="field-row">
+            <label title="{{tooltips.itemNotes}}">NOTAS</label>
+            <textarea name="system.notes" placeholder="Notas" title="{{tooltips.itemNotes}}">{{system.notes}}</textarea>
+          </div>
+        </div>
+        {{#if isUsable}}
+          <div class="button-row">
+            <button type="button" class="use-item" title="{{tooltips.useItem}}">USAR</button>
+          </div>
+        {{/if}}
+      </div>
+    </div>
+  </div>
+</form>

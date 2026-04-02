@@ -1,0 +1,100 @@
+<form class="frontierscum" autocomplete="off">
+  <div class="horsesheet">
+    <div class="horsesheet-header">
+      <div class="title">MONTURA</div>
+      <div class="rider"></div>
+    </div>
+
+    <div class="horsesheet-body">
+      <div class="inner1">
+        <div class="inner2">
+          <div class="name-block">
+            <div class="field-row name-row">
+              <label title="{{tooltips.horseName}}">NOMBRE</label>
+              <input type="text" name="name" value="{{actor.name}}" spellcheck="false" title="{{tooltips.horseName}}"/>
+            </div>
+            <div class="field-row">
+              <label title="{{tooltips.horseLikes}}">LE GUSTA</label>
+              <input type="text" name="system.likes" value="{{system.likes}}" spellcheck="false" title="{{tooltips.horseLikes}}"/>
+              <label title="{{tooltips.horseType}}">TIPO</label>
+              <input type="text" name="system.type" value="{{system.type}}" spellcheck="false" title="{{tooltips.horseType}}"/>
+            </div>
+            <div class="field-row">
+              <label title="{{tooltips.horseVehicle}}">VEHÍCULO</label>
+              <input type="text" name="system.vehicle" value="{{system.vehicle}}" spellcheck="false" title="{{tooltips.horseVehicle}}"/>
+            </div>
+            <div class="field-row">
+              <label title="{{tooltips.horseNotes}}">NOTAS</label>
+              <input type="text" name="system.notes" value="{{system.notes}}" spellcheck="false" title="{{tooltips.horseNotes}}"/>
+            </div>
+          </div>
+
+          <div class="bottom-cols">
+            <div class="left-col">
+              <div class="portrait-block">
+                <img src="{{actor.img}}" title="{{actor.name}}" data-edit="img"/>
+              </div>
+
+              <div class="stolen-block">
+                <div class="stats">
+                  <div class="stat-row">
+                    <div class="stat-block">
+                      <label title="{{tooltips.horseStolen}}">ROBADA</label>
+                      <div class="horseshoe">
+                        <label class="check-container" title="{{tooltips.horseStolen}}">
+                          <input type="checkbox" name="system.stolen" {{#if system.stolen}}checked{{/if}} />
+                          <span class="checkmark"></span>
+                        </label>
+                      </div>
+                    </div>
+                    <div class="stat-block">
+                      <label title="{{tooltips.hp}}">HP</label>
+                      <div class="horseshoe">
+                        <input type="number" name="system.hp.value" value="{{system.hp.value}}" placeholder="0" title="{{tooltips.hp}}"/>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="stat-row">
+                    <div class="stat-block">
+                      <label title="{{tooltips.horseMorale}}">MORAL</label>
+                      <div class="horseshoe">
+                        <input type="number" name="system.morale" value="{{system.morale}}" placeholder="7" title="{{tooltips.horseMorale}}"/>
+                      </div>
+                    </div>
+                    <div class="stat-block">
+                      <label title="{{tooltips.maxHp}}">MAX</label>
+                      <div class="horseshoe">
+                        <input type="number" name="system.hp.max" value="{{system.hp.max}}" placeholder="0" title="{{tooltips.maxHp}}"/>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="horse-button-row">
+                    <button type="button" class="morale-button" title="{{tooltips.horseMorale}}">
+                      <i class="fas fa-dice-six"></i>&nbsp;MORAL
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="right-col">
+              <div class="on-your-horse" data-slot-group="horse">
+                <div class="top-label">EN LA MONTURA</div>
+                {{#each horseEntries as |slot|}}
+                  <div class="on-horse-row">
+                    <input type="text" name="system.{{slot.key}}" value="{{slot.value}}" spellcheck="false" title="{{slot.tooltip}}"/>
+                    {{#if slot.canUse}}<button type="button" class="slot-use slot-icon" data-item-id="{{slot.itemId}}" title="{{../tooltips.rollItem}}&#10;{{slot.tooltip}}"><i class="fas fa-dice-d20"></i></button>{{/if}}
+                    {{#if slot.canOpen}}<button type="button" class="slot-open slot-icon" data-item-id="{{slot.itemId}}" title="{{../tooltips.openItem}}&#10;{{slot.tooltip}}"><i class="fas fa-info-circle"></i></button>{{/if}}
+                    {{#if slot.canDelete}}<button type="button" class="slot-delete slot-icon" data-slot-key="{{slot.key}}" data-item-id="{{slot.itemId}}" title="Quitar de la montura&#10;{{slot.tooltip}}"><i class="fas fa-trash-alt"></i></button>{{/if}}
+                  </div>
+                {{/each}}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>

@@ -1,0 +1,164 @@
+{
+  "Actor": {
+    "types": ["character", "npc", "horse"],
+    "templates": {
+      "common": {
+        "abilities": {
+          "grit": 0,
+          "slick": 0,
+          "wits": 0,
+          "luck": 0
+        },
+        "hp": {
+          "max": 1,
+          "value": 1
+        },
+        "notes": ""
+      }
+    },
+    "character": {
+      "templates": ["common"],
+      "aces": 0,
+      "background": "",
+      "history": "",
+      "backSlot1": "",
+      "backSlot1Id": "",
+      "backSlot2": "",
+      "backSlot2Id": "",
+      "backSlot3": "",
+      "backSlot3Id": "",
+      "beltSlot1": "",
+      "beltSlot1Id": "",
+      "beltSlot2": "",
+      "beltSlot2Id": "",
+      "beltSlot3": "",
+      "beltSlot3Id": "",
+      "condition1": "",
+      "condition2": "",
+      "conditionSlot1": "",
+      "conditionSlot1Id": "",
+      "conditionSlot2": "",
+      "conditionSlot2Id": "",
+      "conditionSlot3": "",
+      "conditionSlot3Id": "",
+      "drunk": false,
+      "drunkAbility1": "",
+      "drunkAbility2": "",
+      "headSlot": "",
+      "headSlotId": "",
+      "miserable": false,
+      "misery": "",
+      "pocketSlot1": "",
+      "pocketSlot1Id": "",
+      "pocketSlot2": "",
+      "pocketSlot2Id": "",
+      "pocketSlot3": "",
+      "pocketSlot3Id": "",
+      "pocketSlot4": "",
+      "pocketSlot4Id": "",
+      "pocketSlot5": "",
+      "pocketSlot5Id": "",
+      "pocketSlot6": "",
+      "pocketSlot6Id": "",
+      "pocketSlot7": "",
+      "pocketSlot7Id": "",
+      "pocketSlot8": "",
+      "pocketSlot8Id": "",
+      "pocketSlot9": "",
+      "pocketSlot9Id": "",
+      "pocketSlot10": "",
+      "pocketSlot10Id": "",
+      "reward": 0,
+      "silver": 0,
+      "skill1": "",
+      "skill2": "",
+      "skill3": "",
+      "skill4": "",
+      "skill5": "",
+      "skill6": "",
+      "wanted": "deadOrAlive",
+      "wantedCrime": ""
+    },
+    "npc": {
+      "templates": ["common"],
+      "attack": "",
+      "morale": 7,
+      "protection": "",
+      "special": ""
+    },
+    "horse": {
+      "templates": ["common"],
+      "likes": "",
+      "morale": 7,
+      "slot1": "",
+      "slot1Id": "",
+      "slot2": "",
+      "slot2Id": "",
+      "slot3": "",
+      "slot3Id": "",
+      "slot4": "",
+      "slot4Id": "",
+      "slot5": "",
+      "slot5Id": "",
+      "slot6": "",
+      "slot6Id": "",
+      "slot7": "",
+      "slot7Id": "",
+      "slot8": "",
+      "slot8Id": "",
+      "slot9": "",
+      "slot9Id": "",
+      "slot10": "",
+      "slot10Id": "",
+      "stolen": false,
+      "type": "",
+      "vehicle": ""
+    }
+  },
+  "Item": {
+    "types": ["gear", "weapon", "protection", "ammo", "medical", "condition", "item"],
+    "templates": {
+      "common": {
+        "slot": "pocket",
+        "summary": "",
+        "notes": "",
+        "cost": 0
+      }
+    },
+    "gear": {
+      "templates": ["common"]
+    },
+    "weapon": {
+      "templates": ["common"],
+      "damage": "",
+      "ammo": "",
+      "hands": "1",
+      "range": "",
+      "weaponClass": "melee"
+    },
+    "protection": {
+      "templates": ["common"],
+      "reduction": "",
+      "protectionClass": "armor"
+    },
+    "ammo": {
+      "templates": ["common"],
+      "ammoClass": "generic",
+      "quantity": 1
+    },
+    "medical": {
+      "templates": ["common"],
+      "healing": "",
+      "uses": 1
+    },
+    "condition": {
+      "templates": ["common"],
+      "slot": "condition"
+    },
+    "item": {
+      "templates": ["common"],
+      "cost": 0,
+      "notes": ""
+    }
+  }
+}
