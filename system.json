@@ -1,0 +1,76 @@
+{
+  "id": "frontierscum-es",
+  "title": "Frontier Scum en Castellano",
+  "description": "Sistema de Foundry VTT para Frontier Scum, adaptado al castellano.",
+  "version": "0.1.0",
+  "authors": [
+    {
+      "name": "Manu Romera de Rune & Bones",
+      "url": "https://github.com/ManuRomera/FrontierScum-ES-"
+    },
+    {
+      "name": "Codex",
+      "flags": {}
+    }
+  ],
+  "license": "LICENSE.mit",
+  "esmodules": [
+    "module/frontierscum.js"
+  ],
+  "styles": [
+    "css/frontierscum.css"
+  ],
+  "packs": [],
+  "documentTypes": {
+    "Actor": {
+      "character": {},
+      "npc": {},
+      "horse": {}
+    },
+    "Item": {
+      "gear": {},
+      "weapon": {},
+      "protection": {},
+      "ammo": {},
+      "medical": {},
+      "condition": {},
+      "item": {}
+    }
+  },
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json"
+    },
+    {
+      "lang": "es",
+      "name": "Castellano",
+      "path": "lang/es.json"
+    }
+  ],
+  "socket": true,
+  "initiative": "1d6",
+  "grid": {
+    "distance": 10,
+    "units": "ft"
+  },
+  "primaryTokenAttribute": "hp",
+  "secondaryTokenAttribute": null,
+  "background": "systems/frontierscum-es/assets/img/frontier-scum-cover.png",
+  "template": "template.json",
+  "media": [
+    {
+      "type": "setup",
+      "url": "systems/frontierscum-es/assets/img/frontier-scum-cover.png",
+      "thumbnail": "systems/frontierscum-es/assets/img/frontier-scum-cover.png"
+    }
+  ],
+  "compatibility": {
+    "minimum": 11,
+    "verified": 13
+  },
+  "manifest": "https://raw.githubusercontent.com/ManuRomera/Test/main/system.json",
+  "download": "https://raw.githubusercontent.com/ManuRomera/Test/main/frontierscum-es.zip",
+  "url": "https://github.com/ManuRomera/Test"
+}
