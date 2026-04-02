@@ -70,7 +70,7 @@
     "minimum": 11,
     "verified": 13
   },
-  "manifest": "https://raw.githubusercontent.com/ManuRomera/Test/main/system.json",
-  "download": "https://raw.githubusercontent.com/ManuRomera/Test/main/frontierscum-es.zip",
-  "url": "https://github.com/ManuRomera/Test"
+  "manifest": "https://raw.githubusercontent.com/ManuRomera/FrontierScum-ES-/main/system.json",
+  "download": "https://raw.githubusercontent.com/ManuRomera/FrontierScum-ES-/main/frontierscum-es.zip",
+  "url": "https://github.com/ManuRomera/FrontierScum-ES-"
 }
